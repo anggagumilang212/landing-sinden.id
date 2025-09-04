@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Home - Open PRO",
-  description: "Page description",
+  title: "SINDEN - Sistem Informasi Desa Modern",
+  description: "SINDEN adalah sistem informasi desa modern yang memudahkan pengelolaan administrasi desa dengan fitur lengkap dan user-friendly.",
 };
 
 import PageIllustration from "@/components/page-illustration";
@@ -15,9 +15,10 @@ export default function Home() {
     <>
       <PageIllustration />
       <Hero />
-      <Workflows />
+
       <Features />
-      <Testimonials />
+      <Workflows />
+      {/* <Testimonials /> */}
       <Cta />
     </>
   );
