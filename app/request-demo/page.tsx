@@ -15,7 +15,7 @@ interface FormData {
     desa: string;
     nomorWhatsApp: string;
     jumlahPenduduk: string; // Nilai dari dropdown, e.g., "500 - 1.000 jiwa"
-    jenisDemo: string;      // Nilai dari dropdown
+    jenisDemo: string;      // Nilai dari dropdown
     waktuPreferred: string; // Nilai dari dropdown
     catatanKhusus: string;
 }
@@ -42,7 +42,7 @@ export default function RequestDemo() {
         desa: '',
         nomorWhatsApp: '',
         jumlahPenduduk: '', // Diubah menjadi string kosong
-        jenisDemo: '',      // Diubah menjadi string kosong
+        jenisDemo: '',      // Diubah menjadi string kosong
         waktuPreferred: '', // Diubah menjadi string kosong
         catatanKhusus: '',
     });
@@ -60,10 +60,14 @@ export default function RequestDemo() {
 
 
     // --- DATA FETCHING (useEffect) ---
-    // (Tidak ada perubahan di bagian ini, semua sudah benar)
+    // 📁 app/request-demo/page.tsx
+    // ... kode lainnya
+
+    // --- DATA FETCHING (useEffect) ---
     useEffect(() => {
         setIsWilayahLoading(true);
-        axios.get<Wilayah[]>(`/api/wilayah/provinsi.json`)
+        // ✅ Perbaikan: Hapus .json di sini. Gunakan URL yang bersih.
+        axios.get<Wilayah[]>(`/api/wilayah/provinsi/1`)
             .then(response => setProvinces(response.data))
             .catch(error => console.error("Error fetching provinces:", error))
             .finally(() => setIsWilayahLoading(false));
@@ -72,7 +76,8 @@ export default function RequestDemo() {
     useEffect(() => {
         if (selectedIds.provId) {
             setIsWilayahLoading(true);
-            axios.get<Wilayah[]>(`/api/wilayah/kabupaten/${selectedIds.provId}.json`)
+            // ✅ Perbaikan: Hapus .json di sini.
+            axios.get<Wilayah[]>(`/api/wilayah/kabupaten/${selectedIds.provId}`)
                 .then(response => { setRegencies(response.data); setDistricts([]); setVillages([]); })
                 .catch(error => console.error("Error fetching regencies:", error))
                 .finally(() => setIsWilayahLoading(false));
@@ -82,7 +87,8 @@ export default function RequestDemo() {
     useEffect(() => {
         if (selectedIds.regId) {
             setIsWilayahLoading(true);
-            axios.get<Wilayah[]>(`/api/wilayah/kecamatan/${selectedIds.regId}.json`)
+            // ✅ Perbaikan: Hapus .json di sini.
+            axios.get<Wilayah[]>(`/api/wilayah/kecamatan/${selectedIds.regId}`)
                 .then(response => { setDistricts(response.data); setVillages([]); })
                 .catch(error => console.error("Error fetching districts:", error))
                 .finally(() => setIsWilayahLoading(false));
@@ -92,13 +98,15 @@ export default function RequestDemo() {
     useEffect(() => {
         if (selectedIds.distId) {
             setIsWilayahLoading(true);
-            axios.get<Wilayah[]>(`/api/wilayah/kelurahan/${selectedIds.distId}.json`)
+            // ✅ Perbaikan: Hapus .json di sini.
+            axios.get<Wilayah[]>(`/api/wilayah/kelurahan/${selectedIds.distId}`)
                 .then(response => setVillages(response.data))
                 .catch(error => console.error("Error fetching villages:", error))
                 .finally(() => setIsWilayahLoading(false));
         }
     }, [selectedIds.distId]);
 
+    // ... kode lainnya
 
     // --- EVENT HANDLERS ---
     // ✅ PERBAIKAN: Fungsi ini disederhanakan dan dibuat lebih aman untuk TypeScript.
