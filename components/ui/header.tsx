@@ -25,10 +25,10 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/signup"
+                href="https://wa.me/6283869513411?text=Halo%20SINDEN,%20saya%20ingin%20konsultasi%20gratis."
                 className="btn-sm bg-linear-to-t from-yellow-600 to-yellow-500 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
               >
-                Daftar Sekarang
+                Konsultasi Gratis
               </Link>
             </li>
           </ul>
