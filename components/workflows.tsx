@@ -145,7 +145,7 @@ export default function Workflows() {
                 </div>
                 {/* Image */}
                 <Image
-                  className="inline-flex lg:ml-6 md:ml-6 xl:ml-6"
+                  className="inline-flex ml-7"
                   src={WorflowImg03}
                   width={280}
                   height={188}
