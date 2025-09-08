@@ -1,8 +1,11 @@
-// 📁 app/request-demo/page.tsx
+
 "use client";
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import PageIllustration from '@/components/page-illustration';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // --- TIPE DATA ---
 // Tipe data FormData diperbarui untuk mencocokkan nilai dropdown baru.
@@ -136,11 +139,9 @@ export default function RequestDemo() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
-        setStatus({ message: '', type: '' });
 
         const message = `
 *-- PERMOHONAN DEMO BARU --*
-
 *Nama Lengkap:* ${formData.namaLengkap}
 *Jabatan:* ${formData.jabatan}
 *Lokasi:* Desa ${formData.desa}, Kec. ${formData.kecamatan}, Kab. ${formData.kabupaten}, Prov. ${formData.provinsi}
@@ -149,24 +150,25 @@ export default function RequestDemo() {
 *Jenis Demo:* ${formData.jenisDemo}
 *Waktu Demo:* ${formData.waktuPreferred || '-'}
 *Catatan:* ${formData.catatanKhusus || '-'}
-        `;
+    `;
 
         try {
             const response = await axios.post(
                 'https://api.fonnte.com/send',
                 {
-                    target: '082295893766', // ⚠️ PASTIKAN INI NOMOR WHATSAPP ANDA
+                    target: '082295893766',
                     message: message.trim(),
                 },
                 {
                     headers: {
-                        'Authorization': 'uBHoyAoW63f1TxW2zppD' // ⚠️ PASTIKAN INI TOKEN FONNTE ANDA
+                        'Authorization': 'uBHoyAoW63f1TxW2zppD'
                     }
                 }
             );
 
             if (response.data.status === true) {
-                setStatus({ message: 'Permohonan demo berhasil dikirim! Kami akan segera menghubungi Anda.', type: 'success' });
+                // ✅ Notifikasi Sukses
+                toast.success("🚀 Permohonan demo berhasil dikirim! Kami akan segera menghubungi Anda.");
                 setFormData({
                     namaLengkap: '', jabatan: '', provinsi: '', kabupaten: '', kecamatan: '', desa: '',
                     nomorWhatsApp: '', jumlahPenduduk: '', jenisDemo: '', waktuPreferred: '', catatanKhusus: '',
@@ -178,11 +180,13 @@ export default function RequestDemo() {
             }
         } catch (error) {
             console.error("Fonnte API Error:", error);
-            setStatus({ message: 'Terjadi kesalahan saat mengirim permohonan. Silakan coba lagi.', type: 'error' });
+            // ✅ Notifikasi Error
+            toast.error("⚠️ Terjadi kesalahan. Mohon coba lagi!");
         } finally {
             setIsLoading(false);
         }
     };
+
 
 
     // --- STYLING ---
@@ -193,6 +197,8 @@ export default function RequestDemo() {
     // --- JSX RENDER ---
     return (
         <section className="relative">
+            <PageIllustration multiple />
+
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 <div className="py-12 md:py-20">
                     {/* Header */}
@@ -319,6 +325,7 @@ export default function RequestDemo() {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </section>
     );
 }

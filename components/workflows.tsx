@@ -1,7 +1,7 @@
 import Image from "next/image";
-import WorflowImg01 from "@/public/images/workflow-01.png";
-import WorflowImg02 from "@/public/images/workflow-02.png";
-import WorflowImg03 from "@/public/images/workflow-03.png";
+import WorflowImg01 from "@/public/images/pendudukicon.png";
+import WorflowImg02 from "@/public/images/keuanganicon.png";
+import WorflowImg03 from "@/public/images/suraticon.png";
 import Spotlight from "@/components/spotlight";
 
 export default function Workflows() {
@@ -13,16 +13,15 @@ export default function Workflows() {
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
             <div className="inline-flex items-center gap-3 pb-3 before:h-px before:w-8 before:bg-linear-to-r before:from-transparent before:to-indigo-200/50 after:h-px after:w-8 after:bg-linear-to-l after:from-transparent after:to-indigo-200/50">
               <span className="inline-flex bg-linear-to-r from-yellow-500 to-indigo-200 bg-clip-text text-transparent">
-                Tailored Workflows
+                Fitur Unggulan
               </span>
             </div>
             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              Map your product journey
+              Solusi Lengkap untuk Desa Modern
             </h2>
             <p className="text-lg text-indigo-200/65">
-              Simple and elegant interface to start collaborating with your team
-              in minutes. It seamlessly integrates with your code and your
-              favorite programming languages.
+              Kelola administrasi desa secara efisien dan transparan dengan
+              berbagai fitur terintegrasi yang kami sediakan.
             </p>
           </div>
           {/* Spotlight items */}
@@ -56,20 +55,20 @@ export default function Workflows() {
                   src={WorflowImg01}
                   width={350}
                   height={288}
-                  alt="Workflow 01"
+                  alt="Manajemen Penduduk"
                 />
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-3">
                     <span className="btn-sm relative rounded-full bg-gray-800/40 px-2.5 py-0.5 text-xs font-normal before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-gray-700/.15),--theme(--color-gray-700/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-gray-800/60">
                       <span className="bg-linear-to-r from-yellow-500 to-indigo-200 bg-clip-text text-transparent">
-                        Built-in Tools
+                        Manajemen Penduduk
                       </span>
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Streamline the product development flow with a content
-                    platform that's aligned across specs and insights.
+                    Kelola data penduduk dengan sistem terintegrasi yang mudah
+                    diakses dan selalu terupdate.
                   </p>
                 </div>
               </div>
@@ -103,20 +102,20 @@ export default function Workflows() {
                   src={WorflowImg02}
                   width={350}
                   height={288}
-                  alt="Workflow 02"
+                  alt="Manajemen Keuangan"
                 />
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-3">
                     <span className="btn-sm relative rounded-full bg-gray-800/40 px-2.5 py-0.5 text-xs font-normal before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-gray-700/.15),--theme(--color-gray-700/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-gray-800/60">
                       <span className="bg-linear-to-r from-yellow-500 to-indigo-200 bg-clip-text text-transparent">
-                        Scale Instantly
+                        Manajemen Keuangan
                       </span>
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Streamline the product development flow with a content
-                    platform that's aligned across specs and insights.
+                    Monitoring anggaran dan keuangan desa secara real-time
+                    dengan laporan yang rinci dan akurat.
                   </p>
                 </div>
               </div>
@@ -146,24 +145,24 @@ export default function Workflows() {
                 </div>
                 {/* Image */}
                 <Image
-                  className="inline-flex"
+                  className="inline-flex lg:ml-6 md:ml-6 xl:ml-6"
                   src={WorflowImg03}
-                  width={350}
-                  height={288}
-                  alt="Workflow 03"
+                  width={280}
+                  height={188}
+                  alt="Surat Menyurat"
                 />
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-3">
                     <span className="btn-sm relative rounded-full bg-gray-800/40 px-2.5 py-0.5 text-xs font-normal before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-gray-700/.15),--theme(--color-gray-700/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-gray-800/60">
                       <span className="bg-linear-to-r from-yellow-500 to-indigo-200 bg-clip-text text-transparent">
-                        Tailored Flows
+                        Surat Menyurat
                       </span>
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Streamline the product development flow with a content
-                    platform that's aligned across specs and insights.
+                    Otomatisasi pembuatan surat administrasi desa dengan template
+                    modern yang dapat dikustomisasi.
                   </p>
                 </div>
               </div>
