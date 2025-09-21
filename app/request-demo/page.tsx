@@ -33,6 +33,11 @@ interface Status {
     type: 'success' | 'error' | '';
 }
 
+export const metadata = {
+    title: "Request Demo - SINDEN",
+    description: "Form Request Demo Aplikasi Manajemen Desa Modern SINDEN. Jadwalkan demo personal dengan tim kami untuk melihat fitur-fitur unggulan SINDEN.",
+};
+
 
 export default function RequestDemo() {
     // --- STATE MANAGEMENT ---
